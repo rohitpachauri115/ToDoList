@@ -1,0 +1,22 @@
+<a class="list-group-item col-lg-7">
+  <div class="">
+    <h4 [ngClass]="{ strike: !todo.active }">{{ todo.title }}</h4>
+    <p [ngClass]="{ strike: !todo.active }">{{ todo.desc }}</p>
+    <div class="checkbox">
+      <label>
+        <input
+          type="checkbox"
+          (click)="onMarkCheckbox(todo)"
+          [checked]="!todo.active"
+        />
+        Done
+      </label>
+    </div>
+    <button
+      class="btn btn-danger btn-sm glyphicon glyphicon-trash"
+      (click)="onDelete(todo)"
+    >
+      Delete
+    </button>
+  </div>
+</a>
